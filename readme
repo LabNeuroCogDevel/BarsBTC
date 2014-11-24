@@ -1,0 +1,6 @@
+# Bars
+3 timepoints of the bars task reprocessed with MH preprocess scripts (new fsl + 4d motion/slicetiming + wavelet despiking)
+
+# History
+2014-11-24 WF
+copy raw with 00_getBars.bash
