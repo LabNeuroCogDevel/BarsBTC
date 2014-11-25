@@ -5,4 +5,5 @@ rsync -Lrzvhi foranw@wallace:/data/Luna1/Raw/MRCTR/ subjs/   \
   --include='*/*mprage*/*' \
   --include='*/*BarsReward*/*' \
   --exclude='*' \
+  --size-only
   #--exclude '*/*'
