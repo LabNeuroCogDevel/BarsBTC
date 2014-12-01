@@ -46,6 +46,7 @@ function preprocess {
   if [  -z "$mprage"   -o \
         -z "$warprage"  ]; then
         cd $mpragedir
+        echo "T1 $subj $vdate"
         preprocessMprage -d y -o mprage_final.nii.gz 
         cd -
   fi
@@ -63,6 +64,7 @@ function preprocess {
   # for each run of bars reward
   for BarsRun in $subjdir/BarsRewards_AntiX4_384x384*; do
     cd $BarsRun
+    echo "T2 $subj $vdate"
     echo "preprocessFunctional $BarsRun"
     cd -
   done
@@ -90,7 +92,7 @@ function waitforjobs {
   while [[ "$njobs" -ge "$MAXJOBS" ]]; do
     echo
     echo  "have ${njobs// } jobs, waiting $WAITTIME"
-    jobs
+    jobs | sed 's/^/	/'
     echo $message
     echo
     sleep $WAITTIME;
